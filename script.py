@@ -332,16 +332,21 @@ def fetch_all_models(
         # Extract the 'data' field from the response
         models_data = data.get("data", [])
 
-        # Create filtered list with only the required keys, excluding models with -1 pricing
+        # Create filtered list with only the required keys, excluding models with -1 or 1 pricing
         openrouter_models = []
         for model in models_data:
             pricing = model.get("pricing")
 
-            # Skip models with -1 pricing for completion or prompt
+            # Skip models with -1 or 0 pricing for completion or prompt
             if pricing:
                 completion_price = pricing.get("completion")
                 prompt_price = pricing.get("prompt")
-                if float(completion_price) == -1 or float(prompt_price) == -1:
+                if (
+                    float(completion_price) == -1
+                    or float(prompt_price) == -1
+                    or float(completion_price) == 0
+                    or float(prompt_price) == 0
+                ):
                     continue
 
             filtered_model = {
