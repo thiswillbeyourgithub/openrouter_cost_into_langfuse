@@ -4,7 +4,7 @@
 
 A Python script that automatically syncs model pricing data from OpenRouter to Langfuse's pricing page. This tool fetches the latest pricing information from OpenRouter's API and creates corresponding models in Langfuse with accurate pricing data.
 
-You might also be interested in my other script: [LiteLLM Proxy OpenRouter Price Updater](https://github.com/thiswillbeyourgithub/litellm_proxy_openrouter_price_updated).
+You might also be interested in my other script: [LiteLLM Proxy OpenRouter Price Updater](https://github.com/thiswillbeyourgithub/litellm_proxy_openrouter_price_updater).
 
 This script was created with assistance from [aider.chat](https://github.com/Aider-AI/aider/).
 
